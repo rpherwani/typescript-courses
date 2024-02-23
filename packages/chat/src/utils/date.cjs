@@ -7,7 +7,10 @@ const { format } = require('date-fns')
  * @returns {string} The formatted date string.
  */
 function formatTimestamp(date) {
+
+
   return format(date, 'MMM dd, yyyy HH:MM:SS a')
+
 }
 
 module.exports = { formatTimestamp }

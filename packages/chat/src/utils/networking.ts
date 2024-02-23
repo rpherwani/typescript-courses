@@ -3,10 +3,10 @@ import { HTTPError } from './http-error.cjs'
 
 /**
  *
- * @param {RequestInfo} input
- * @param {RequestInit} [init]
+ * @param input
+ * @param init
  */
-async function getJSON(input, init) {
+async function getJSON(input: RequestInfo, init?: RequestInit) {
   try {
     const response = await fetch(input, init)
     const responseJSON = await response.json()
@@ -25,10 +25,10 @@ async function getJSON(input, init) {
 
 /**
  *
- * @param {string} path
- * @param {RequestInit} [init]
+ * @param path
+ * @param init
  */
-export async function apiCall(path, init) {
+export async function apiCall(path: string, init?: RequestInit) {
   let response
   /** @type {{}} */
   let json
@@ -50,4 +50,5 @@ export async function apiCall(path, init) {
     throw new HTTPError(response, 'Problem while making API call')
   }
   return json
+  
 }
