@@ -12,7 +12,11 @@
     "allowImportingTsExtensions": true,
     // "noImplicitAny": true,
     "baseUrl": ".",
-    "rootDir": "."
+    "rootDir": ".",
+    "paths": {
+      "*": ["types/*"],
+      "chat-stdlib":["../chat-stdlib/dist/chat-stdlib-beta.d.ts"]
+    }
   },
   "include": ["src", "tests", "types", ".eslintrc.js", "jest.config.js"],
 }
